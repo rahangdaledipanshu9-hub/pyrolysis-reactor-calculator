@@ -4,7 +4,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Pyrolysis Reactor Digital Simulator</title>
+<title>Waste Pyrolysis Digital Reactor Simulator</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,9 +15,29 @@
 <body>
 
 <header>
+
 <h1>Waste Pyrolysis Digital Reactor Simulator</h1>
-<p>Mixed Waste → Fuel Yield Prediction Tool</p>
+
+<p>
+A predictive tool to estimate fuel production from mixed waste using catalytic pyrolysis.
+This simulator estimates oil yield, gas yield, biochar formation, and environmental benefits.
+</p>
+
 </header>
+
+
+<section class="intro">
+
+<h2>About the Simulation</h2>
+
+<p>
+This digital reactor model simulates catalytic pyrolysis of mixed waste streams such as plastics,
+textiles, and biomass. The user can adjust feedstock mass, catalyst loading, reactor temperature,
+and reaction time to observe predicted product yields and reactor performance.
+</p>
+
+</section>
+
 
 <div class="main">
 
@@ -25,51 +45,83 @@
 
 <h2>Process Inputs</h2>
 
-<label>Feedstock (kg)</label>
+<p class="small">
+Enter reactor operating conditions below to simulate the waste-to-fuel conversion process.
+</p>
+
+<label>Feedstock Mass (kg)</label>
 <input type="number" id="feedstock">
 
 <label>Catalyst Loading (%)</label>
 <input type="number" id="catalyst">
 
-<label>Temperature (°C)</label>
+<label>Reactor Temperature (°C)</label>
 <input type="number" id="temperature">
 
-<label>Reaction Time (min)</label>
+<label>Reaction Time (minutes)</label>
 <input type="number" id="time">
 
-<button onclick="calculateYield()">Run Simulation</button>
+<button onclick="calculateYield()">Run Reactor Simulation</button>
 
 </div>
 
+
 <div class="output-panel">
 
-<h2>Results</h2>
+<h2>Predicted Results</h2>
+
+<p class="small">
+The predicted mass distribution of pyrolysis products based on process conditions.
+</p>
 
 <p>Oil Yield: <span id="oil">-</span></p>
 <p>Gas Yield: <span id="gas">-</span></p>
 <p>Biochar: <span id="char">-</span></p>
 
-<p>Conversion: <span id="conversion">-</span></p>
-<p>Carbon Footprint: <span id="carbon">-</span></p>
-<p>Estimated Profit: <span id="profit">-</span></p>
+<p>Conversion Efficiency: <span id="conversion">-</span></p>
+
+<p>Carbon Emissions Avoided: <span id="carbon">-</span></p>
+
+<p>Estimated Economic Profit: <span id="profit">-</span></p>
 
 </div>
 
 </div>
+
 
 <section>
 
-<h2>Yield vs Reaction Time</h2>
+<h2>Reactor Yield Evolution</h2>
+
+<p class="small">
+The graph below shows how oil, gas, and char formation evolve with reaction time.
+</p>
+
 <canvas id="timeChart"></canvas>
 
 </section>
 
+
 <section>
 
-<h2>Temperature Optimization</h2>
+<h2>Temperature Optimization Map</h2>
+
+<p class="small">
+This chart illustrates the effect of reactor temperature on oil yield performance.
+</p>
+
 <canvas id="optChart"></canvas>
 
 </section>
+
+
+<footer>
+
+<p>
+Digital twin simulation developed for waste-to-energy reactor analysis.
+</p>
+
+</footer>
 
 <script src="script.js"></script>
 <script src="optimization.js"></script>
