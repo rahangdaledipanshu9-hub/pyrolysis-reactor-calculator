@@ -1,7 +1,7 @@
 body{
 
 font-family: Arial;
-background:#f4f6f7;
+background:#eef2f3;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -13,22 +13,18 @@ height:100vh;
 
 background:white;
 padding:30px;
-width:350px;
 border-radius:10px;
-box-shadow:0 0 10px gray;
+width:450px;
+box-shadow:0 0 12px gray;
 text-align:center;
 
-}
-
-h1{
-margin-bottom:20px;
 }
 
 input{
 
 width:90%;
 padding:10px;
-margin:10px 0;
+margin:8px;
 border:1px solid #ccc;
 border-radius:5px;
 
@@ -40,18 +36,26 @@ background:#2e86de;
 color:white;
 padding:10px 20px;
 border:none;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 
 }
 
 button:hover{
+
 background:#1b4f72;
+
 }
 
-.result{
+.results{
 
 margin-top:20px;
 font-weight:bold;
+
+}
+
+canvas{
+
+margin-top:20px;
 
 }
