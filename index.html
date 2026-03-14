@@ -14,40 +14,40 @@
 
 <body>
 
-<header>
+<header class="hero">
 
-<h1>Waste Pyrolysis Digital Reactor Simulator</h1>
+<h1>Waste-to-Fuel Digital Reactor Simulator</h1>
 
 <p>
-A predictive tool to estimate fuel production from mixed waste using catalytic pyrolysis.
-This simulator estimates oil yield, gas yield, biochar formation, and environmental benefits.
+AI-assisted predictive model for catalytic pyrolysis of mixed waste streams.
 </p>
+
+<button onclick="window.scrollTo(0,600)">Start Simulation</button>
 
 </header>
 
 
-<section class="intro">
+<section class="about">
 
-<h2>About the Simulation</h2>
+<h2>About the Technology</h2>
 
 <p>
-This digital reactor model simulates catalytic pyrolysis of mixed waste streams such as plastics,
-textiles, and biomass. The user can adjust feedstock mass, catalyst loading, reactor temperature,
-and reaction time to observe predicted product yields and reactor performance.
+This digital twin simulates catalytic pyrolysis of mixed waste including plastics,
+textiles, and biomass. By adjusting reactor conditions such as temperature,
+catalyst loading, and reaction time, the platform predicts fuel yield,
+environmental benefits, and economic value.
 </p>
 
 </section>
 
 
-<div class="main">
+<section class="dashboard">
+
+<h2>Reactor Simulation Dashboard</h2>
 
 <div class="input-panel">
 
-<h2>Process Inputs</h2>
-
-<p class="small">
-Enter reactor operating conditions below to simulate the waste-to-fuel conversion process.
-</p>
+<h3>Process Inputs</h3>
 
 <label>Feedstock Mass (kg)</label>
 <input type="number" id="feedstock">
@@ -58,57 +58,72 @@ Enter reactor operating conditions below to simulate the waste-to-fuel conversio
 <label>Reactor Temperature (°C)</label>
 <input type="number" id="temperature">
 
-<label>Reaction Time (minutes)</label>
+<label>Reaction Time (min)</label>
 <input type="number" id="time">
 
-<button onclick="calculateYield()">Run Reactor Simulation</button>
+<button onclick="calculateYield()">Run Simulation</button>
 
 </div>
 
 
-<div class="output-panel">
+<div class="results">
 
-<h2>Predicted Results</h2>
+<div class="card green">
 
-<p class="small">
-The predicted mass distribution of pyrolysis products based on process conditions.
-</p>
+<h3>Oil Yield</h3>
+<p id="oil">-</p>
 
-<p>Oil Yield: <span id="oil">-</span></p>
-<p>Gas Yield: <span id="gas">-</span></p>
-<p>Biochar: <span id="char">-</span></p>
+</div>
 
-<p>Conversion Efficiency: <span id="conversion">-</span></p>
+<div class="card orange">
 
-<p>Carbon Emissions Avoided: <span id="carbon">-</span></p>
+<h3>Gas Yield</h3>
+<p id="gas">-</p>
 
-<p>Estimated Economic Profit: <span id="profit">-</span></p>
+</div>
+
+<div class="card gray">
+
+<h3>Biochar</h3>
+<p id="char">-</p>
+
+</div>
+
+<div class="card blue">
+
+<h3>Conversion</h3>
+<p id="conversion">-</p>
+
+</div>
+
+<div class="card purple">
+
+<h3>Carbon Reduction</h3>
+<p id="carbon">-</p>
+
+</div>
+
+<div class="card gold">
+
+<h3>Profit</h3>
+<p id="profit">-</p>
 
 </div>
 
 </div>
-
-
-<section>
-
-<h2>Reactor Yield Evolution</h2>
-
-<p class="small">
-The graph below shows how oil, gas, and char formation evolve with reaction time.
-</p>
-
-<canvas id="timeChart"></canvas>
 
 </section>
 
 
-<section>
+<section class="graphs">
 
-<h2>Temperature Optimization Map</h2>
+<h2>Reactor Performance Analysis</h2>
 
-<p class="small">
-This chart illustrates the effect of reactor temperature on oil yield performance.
-</p>
+<h3>Yield vs Reaction Time</h3>
+
+<canvas id="timeChart"></canvas>
+
+<h3>Temperature Optimization</h3>
 
 <canvas id="optChart"></canvas>
 
@@ -117,11 +132,10 @@ This chart illustrates the effect of reactor temperature on oil yield performanc
 
 <footer>
 
-<p>
-Digital twin simulation developed for waste-to-energy reactor analysis.
-</p>
+<p>Digital twin platform for waste-to-energy reactor design.</p>
 
 </footer>
+
 
 <script src="script.js"></script>
 <script src="optimization.js"></script>
